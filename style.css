@@ -17,9 +17,9 @@ body {
 
 #box {
     box-sizing: border-box;
-    border: solid black;
-    width: 45px;
-    height: 45px;
+    /* border: solid black; */
+    width: 30px;
+    height: 30px;
 }
 
 .color-change {

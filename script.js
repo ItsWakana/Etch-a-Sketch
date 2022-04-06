@@ -1,12 +1,16 @@
+const container = document.querySelector('.container');
+const button = document.querySelector('button');
 
+// function resetState() {
+//     container.removeChild(subContainer);
+// }
 
 function createRow() {
     
-    const container = document.querySelector('.container');
     subContainer = document.createElement('div');
     subContainer.className = "sub-container";
 
-    for (i=0; i<16; i++) {
+    for (i=0; i < 16; i++) {
 
         smallBox = document.createElement('div');
         smallBox.id = "box";
@@ -17,7 +21,7 @@ function createRow() {
 
     container.appendChild(subContainer);
 
-    
+
 }
 
 function fullGrid() {
@@ -37,4 +41,10 @@ Array.from(boxes).forEach((box) => {
     });
 });
 
+button.addEventListener('click', clearBoard);
 
+function clearBoard() {
+    Array.from(boxes).forEach((box) => {
+        box.style.backgroundColor = 'white';
+    });
+}
