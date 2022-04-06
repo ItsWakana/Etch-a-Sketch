@@ -12,8 +12,12 @@ function createRow() {
         smallBox.id = "box";
 
         subContainer.appendChild(smallBox);
+
     }
+
     container.appendChild(subContainer);
+
+    
 }
 
 function fullGrid() {
@@ -25,3 +29,12 @@ function fullGrid() {
 }
 
 fullGrid();
+
+const boxes = document.querySelectorAll('#box');
+Array.from(boxes).forEach((box) => {
+    box.addEventListener('mouseover', () => {
+        box.style.backgroundColor = 'black';
+    });
+});
+
+
