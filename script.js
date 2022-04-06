@@ -49,7 +49,7 @@ button.addEventListener('click', clearBoard);
 const boxes = document.querySelectorAll('#box');
 Array.from(boxes).forEach((box) => {
     box.addEventListener('mouseover', () => {
-        box.style.backgroundColor = 'black';
+        box.style.backgroundColor = getRandomColor();
     });
 });
 
@@ -57,4 +57,14 @@ function clearBoard() {
     Array.from(boxes).forEach((box) => {
         box.style.backgroundColor = 'white';
     });
+}
+
+function getRandomColor() {
+    let letters = '0123456789ABCDEF';
+    let color =  '#';
+
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }

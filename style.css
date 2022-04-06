@@ -9,7 +9,7 @@ body {
 .container {
     display: flex;
     justify-content: center;
-    border: solid rgb(196, 43, 43);
+    /* border: solid rgb(196, 43, 43); */
     width:500px;
     
 }
@@ -23,7 +23,7 @@ body {
 
 #box {
     box-sizing: border-box;
-    border: solid black;
+    /* border: solid black; */
     aspect-ratio: 1 / 1;
 }
 
