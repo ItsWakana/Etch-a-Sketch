@@ -34,14 +34,15 @@ function fullGrid() {
 
 fullGrid();
 
+button.addEventListener('click', clearBoard);
+
+
 const boxes = document.querySelectorAll('#box');
 Array.from(boxes).forEach((box) => {
     box.addEventListener('mouseover', () => {
         box.style.backgroundColor = 'black';
     });
 });
-
-button.addEventListener('click', clearBoard);
 
 function clearBoard() {
     Array.from(boxes).forEach((box) => {
