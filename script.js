@@ -5,12 +5,12 @@ const button = document.querySelector('button');
 //     container.removeChild(subContainer);
 // }
 
-function createRow() {
+function createRow(input) {
     
     subContainer = document.createElement('div');
     subContainer.className = "sub-container";
 
-    for (i=0; i < 16; i++) {
+    for (i=0; i < input; i++) {
 
         smallBox = document.createElement('div');
         smallBox.id = "box";
@@ -24,11 +24,20 @@ function createRow() {
 
 }
 
-function fullGrid() {
-    myRows = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
 
-    myRows.forEach(() => {
-        createRow();
+function fullGrid() {
+    let userInput = prompt('Pick a number for the grid: ');
+    let myNewArray = [];
+
+    for (i=1; i <= userInput; i++) {
+        //mynewArray.push[i];
+        myNewArray.push([i]);
+    }
+
+    //myRows = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+
+    myNewArray.forEach(() => {
+        createRow(userInput);
     });
 }
 

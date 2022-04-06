@@ -23,8 +23,8 @@ body {
 
 #box {
     box-sizing: border-box;
-    /* border: solid black; */
-    height: 30px;
+    border: solid black;
+    aspect-ratio: 1 / 1;
 }
 
 .color-change {
