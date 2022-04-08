@@ -21,7 +21,11 @@ function createRow(input) {
 }
 
 function fullGrid() {
-    container.innerHTML = "";
+    
+    while (container.hasChildNodes()) {
+        container.removeChild(container.lastChild)
+    }
+
     let userInput = prompt('Pick a number for the grid: ');
     if (userInput > 100) return fullGrid();
 
