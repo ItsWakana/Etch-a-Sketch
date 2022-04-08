@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     /* border: solid rgb(196, 43, 43); */
-    width:500px;
+    width:600px;
     
 }
 
@@ -21,12 +21,6 @@ body {
     background-color: white;
 }
 
-#box {
-    box-sizing: border-box;
-    /* border: solid black; */
+.box {
     aspect-ratio: 1 / 1;
-}
-
-.color-change {
-    background-color: black;
 }
