@@ -1,8 +1,9 @@
 const button = document.querySelector('button');
-
 const container = document.querySelector('.container');
 
 button.addEventListener('click', fullGrid);
+
+fullGrid();
 
 function createRow(input) {
     subContainer = document.createElement('div');
@@ -16,20 +17,19 @@ function createRow(input) {
         subContainer.appendChild(smallBox);
 
     }
-
     container.appendChild(subContainer);
 }
-
 
 function fullGrid() {
     container.innerHTML = "";
     let userInput = prompt('Pick a number for the grid: ');
+    if (userInput > 100) return fullGrid();
+
     let myNewArray = [];
 
     for (i=1; i <= userInput; i++) {
         myNewArray.push([i]);
     }
-
     
     myNewArray.forEach(() => {
         createRow(userInput);
