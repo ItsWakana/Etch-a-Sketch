@@ -1,6 +1,7 @@
 const button = document.querySelector('.button');
 const container = document.querySelector('.container');
 const heading = document.querySelector('h1');
+
 button.addEventListener('click', fullGrid);
 
 button.addEventListener('mouseover', () => {
@@ -44,7 +45,7 @@ function fullGrid() {
     if (userInput > 100) return fullGrid();
 
     heading.textContent = `Here is your ${userInput} x ${userInput} grid!`
-    
+
     let myNewArray = [];
 
     for (i=1; i <= userInput; i++) {
