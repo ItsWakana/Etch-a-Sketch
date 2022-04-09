@@ -11,6 +11,17 @@ button.addEventListener('mouseout', () => {
     button.classList.remove('button-fx');
 });
 
+
+
+container.addEventListener('mouseover', () => {
+    container.classList.add('container-fx');
+    
+});
+
+container.addEventListener('mouseout', () => {
+    container.classList.remove('container-fx');
+});
+
 fullGrid();
 
 function createRow(input) {
