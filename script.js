@@ -1,7 +1,15 @@
-const button = document.querySelector('button');
+const button = document.querySelector('.button');
 const container = document.querySelector('.container');
 
 button.addEventListener('click', fullGrid);
+
+button.addEventListener('mouseover', () => {
+    button.classList.add('button-fx');
+});
+
+button.addEventListener('mouseout', () => {
+    button.classList.remove('button-fx');
+});
 
 fullGrid();
 
@@ -48,7 +56,7 @@ function fullGrid() {
     });
 
     Array.from(boxes).forEach((box) => {
-        box.style.backgroundColor = 'white';
+        box.style.backgroundColor = 'black';
     });
 }
 
