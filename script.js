@@ -12,15 +12,8 @@ button.addEventListener('mouseover', () => {
     });
 });
 
-container.addEventListener('mouseover', () => {
-    container.classList.add('container-fx');
-
-    container.addEventListener('mouseout', () => {
-        container.classList.remove('container-fx');
-    });
-});
-
 function createRow(input) {
+
     subContainer = document.createElement('div');
     subContainer.className = "sub-container";
 
@@ -34,6 +27,49 @@ function createRow(input) {
     }
     container.appendChild(subContainer);
 }
+
+function createMenu() {
+
+    main = document.querySelector('.main');
+
+    buttonContainer = document.createElement('div');
+    buttonContainer.classList = 'button-container';
+
+    blackColor = document.createElement('div');
+    rainbow = document.createElement('div');
+
+    blackColor.classList = 'button';
+    rainbow.classList = 'button';
+
+    blackColor.textContent = 'Black';
+    rainbow.textContent = 'Rainbow';
+
+    main.appendChild(buttonContainer);
+    buttonContainer.appendChild(blackColor);
+    buttonContainer.appendChild(rainbow);
+
+    blackColor.addEventListener('mouseover', () => {
+        blackColor.classList.add('button-fx');
+    
+        blackColor.addEventListener('mouseout', () => {
+            blackColor.classList.remove('button-fx');
+        });
+    });
+
+    rainbow.addEventListener('mouseover', () => {
+        rainbow.classList.add('button-fx');
+    
+        rainbow.addEventListener('mouseout', () => {
+            rainbow.classList.remove('button-fx');
+        });
+    });
+
+    blackColor.addEventListener('click', mouseOverFxBlack);
+
+    rainbow.addEventListener('click', mouseOverFxColor);
+
+}
+
 
 function fullGrid() {
 
@@ -56,7 +92,7 @@ function fullGrid() {
         createRow(userInput);
     });
 
-    mouseOverFx();
+    mouseOverFxBlack();
 }
 
 function getRandomColor() {
@@ -69,7 +105,22 @@ function getRandomColor() {
     return color;
 }
 
-function mouseOverFx() {
+function mouseOverFxBlack() {
+
+    const boxes = document.querySelectorAll('.box');
+    
+    Array.from(boxes).forEach((box) => {
+        box.addEventListener('mouseover', () => {
+            box.style.backgroundColor = 'black';
+        });
+    });
+
+    // Array.from(boxes).forEach((box) => {
+    //     box.style.backgroundColor = 'white';
+    // });
+}
+
+function mouseOverFxColor() {
 
     const boxes = document.querySelectorAll('.box');
     
@@ -79,9 +130,11 @@ function mouseOverFx() {
         });
     });
 
-    Array.from(boxes).forEach((box) => {
-        box.style.backgroundColor = 'black';
-    });
+    // Array.from(boxes).forEach((box) => {
+    //     box.style.backgroundColor = 'white';
+    // });
 }
 
 fullGrid();
+
+createMenu();
