@@ -36,16 +36,20 @@ function createMenu() {
 
     blackColor = document.createElement('div');
     rainbow = document.createElement('div');
+    clearBoard = document.createElement('div');
 
     blackColor.classList = 'button';
     rainbow.classList = 'button';
+    clearBoard.classList = 'button';
 
     blackColor.textContent = 'Black Paint';
     rainbow.textContent = 'Rainbow Paint';
+    clearBoard.textContent = 'Clear Board';
 
     main.appendChild(buttonContainer);
     buttonContainer.appendChild(blackColor);
     buttonContainer.appendChild(rainbow);
+    buttonContainer.appendChild(clearBoard);
 
     blackColor.addEventListener('mouseover', () => {
         blackColor.classList.add('button-fx');
@@ -60,6 +64,14 @@ function createMenu() {
     
         rainbow.addEventListener('mouseout', () => {
             rainbow.classList.remove('button-fx');
+        });
+    });
+
+    clearBoard.addEventListener('mouseover', () => {
+        clearBoard.classList.add('button-fx');
+    
+        clearBoard.addEventListener('mouseout', () => {
+            clearBoard.classList.remove('button-fx');
         });
     });
 
@@ -78,6 +90,8 @@ function createMenu() {
         rainbow.classList.remove('button-fx2');
         blackColor.classList.remove('button-fx2');
     });
+
+    clearBoard.addEventListener('click', boardClear);
 
 }
 
@@ -122,6 +136,15 @@ function mouseOverFxBlack() {
         box.addEventListener('mouseover', () => {
             box.style.backgroundColor = 'black';
         });
+    });
+}
+
+function boardClear() {
+
+    const boxes = document.querySelectorAll('.box');
+    
+    Array.from(boxes).forEach((box) => {
+            box.style.backgroundColor = 'white';
     });
 }
 
