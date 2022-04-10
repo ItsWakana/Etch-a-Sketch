@@ -65,9 +65,15 @@ function createMenu() {
     });
 
     blackColor.addEventListener('click', mouseOverFxBlack);
-
+    blackColor.addEventListener('click', () => {
+        blackColor.classList.add('button-fx2');
+        rainbow.classList.remove('button-fx2');
+    })
     rainbow.addEventListener('click', mouseOverFxColor);
-
+    rainbow.addEventListener('click', () => {
+        rainbow.classList.add('button-fx2');
+        blackColor.classList.remove('button-fx2');
+    })
 }
 
 
@@ -91,8 +97,6 @@ function fullGrid() {
     myNewArray.forEach(() => {
         createRow(userInput);
     });
-
-    mouseOverFxBlack();
 }
 
 function getRandomColor() {
