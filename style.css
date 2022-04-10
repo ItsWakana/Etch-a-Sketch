@@ -32,8 +32,10 @@ h1 {
 .button-container {
     display:flex;
     flex-direction: column;
+    justify-content: space-between;
     margin-left: 15px;
     margin-right: 15px;
+    margin-bottom: 15px;
 }
 
 .container {

@@ -5,14 +5,6 @@ main = document.querySelector('.main');
 
 button.addEventListener('click', fullGrid);
 
-// button.addEventListener('mouseover', () => {
-//     button.classList.add('button-fx');
-
-//     button.addEventListener('mouseout', () => {
-//         button.classList.remove('button-fx');
-//     });
-// });
-
 function createRow(input) {
 
     subContainer = document.createElement('div');
@@ -34,6 +26,9 @@ function createMenu() {
     buttonContainer = document.createElement('div');
     buttonContainer.classList = 'button-container';
 
+    btnContainerSml = document.createElement('div');
+    btnContainerSml.clasList = 'button-container';
+
     blackColor = document.createElement('div');
     rainbow = document.createElement('div');
     clearBoard = document.createElement('div');
@@ -47,8 +42,11 @@ function createMenu() {
     clearBoard.textContent = 'Clear Board';
 
     main.appendChild(buttonContainer);
-    buttonContainer.appendChild(blackColor);
-    buttonContainer.appendChild(rainbow);
+
+    buttonContainer.appendChild(btnContainerSml);
+
+    btnContainerSml.appendChild(blackColor);
+    btnContainerSml.appendChild(rainbow);
     buttonContainer.appendChild(clearBoard);
 
     buttons = document.querySelectorAll('.button');
