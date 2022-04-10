@@ -53,6 +53,7 @@ h1 {
 }
 
 .button {
+    user-select: none;
     color: white;
     font-size: 18px;
     display:flex;

@@ -1,6 +1,7 @@
 const button = document.querySelector('.button');
 const container = document.querySelector('.container');
 const heading = document.querySelector('h1');
+main = document.querySelector('.main');
 
 button.addEventListener('click', fullGrid);
 
@@ -30,8 +31,6 @@ function createRow(input) {
 
 function createMenu() {
 
-    main = document.querySelector('.main');
-
     buttonContainer = document.createElement('div');
     buttonContainer.classList = 'button-container';
 
@@ -41,8 +40,8 @@ function createMenu() {
     blackColor.classList = 'button';
     rainbow.classList = 'button';
 
-    blackColor.textContent = 'Black';
-    rainbow.textContent = 'Rainbow';
+    blackColor.textContent = 'Black Paint';
+    rainbow.textContent = 'Rainbow Paint';
 
     main.appendChild(buttonContainer);
     buttonContainer.appendChild(blackColor);
@@ -68,12 +67,18 @@ function createMenu() {
     blackColor.addEventListener('click', () => {
         blackColor.classList.add('button-fx2');
         rainbow.classList.remove('button-fx2');
-    })
+    });
     rainbow.addEventListener('click', mouseOverFxColor);
     rainbow.addEventListener('click', () => {
         rainbow.classList.add('button-fx2');
         blackColor.classList.remove('button-fx2');
-    })
+    });
+
+    button.addEventListener('click', () => {
+        rainbow.classList.remove('button-fx2');
+        blackColor.classList.remove('button-fx2');
+    });
+
 }
 
 
@@ -118,10 +123,6 @@ function mouseOverFxBlack() {
             box.style.backgroundColor = 'black';
         });
     });
-
-    // Array.from(boxes).forEach((box) => {
-    //     box.style.backgroundColor = 'white';
-    // });
 }
 
 function mouseOverFxColor() {
@@ -133,10 +134,6 @@ function mouseOverFxColor() {
             box.style.backgroundColor = getRandomColor();
         });
     });
-
-    // Array.from(boxes).forEach((box) => {
-    //     box.style.backgroundColor = 'white';
-    // });
 }
 
 fullGrid();
