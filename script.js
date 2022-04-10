@@ -5,13 +5,13 @@ main = document.querySelector('.main');
 
 button.addEventListener('click', fullGrid);
 
-button.addEventListener('mouseover', () => {
-    button.classList.add('button-fx');
+// button.addEventListener('mouseover', () => {
+//     button.classList.add('button-fx');
 
-    button.addEventListener('mouseout', () => {
-        button.classList.remove('button-fx');
-    });
-});
+//     button.addEventListener('mouseout', () => {
+//         button.classList.remove('button-fx');
+//     });
+// });
 
 function createRow(input) {
 
@@ -51,28 +51,16 @@ function createMenu() {
     buttonContainer.appendChild(rainbow);
     buttonContainer.appendChild(clearBoard);
 
-    blackColor.addEventListener('mouseover', () => {
-        blackColor.classList.add('button-fx');
-    
-        blackColor.addEventListener('mouseout', () => {
-            blackColor.classList.remove('button-fx');
-        });
-    });
+    buttons = document.querySelectorAll('.button');
 
-    rainbow.addEventListener('mouseover', () => {
-        rainbow.classList.add('button-fx');
-    
-        rainbow.addEventListener('mouseout', () => {
-            rainbow.classList.remove('button-fx');
+    Array.from(buttons).forEach((button) => {
+        button.addEventListener('mouseover', () => {
+            button.classList.add('button-fx');
         });
-    });
 
-    clearBoard.addEventListener('mouseover', () => {
-        clearBoard.classList.add('button-fx');
-    
-        clearBoard.addEventListener('mouseout', () => {
-            clearBoard.classList.remove('button-fx');
-        });
+        button.addEventListener('mouseout', () => {
+            button.classList.remove('button-fx');
+        })
     });
 
     blackColor.addEventListener('click', mouseOverFxBlack);
