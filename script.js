@@ -130,7 +130,7 @@ function boardClear() {
     const boxes = document.querySelectorAll('.box');
     
     Array.from(boxes).forEach((box) => {
-            box.style.backgroundColor = 'white';
+            box.style.backgroundColor = '';
     });
 }
 
